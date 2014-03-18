@@ -27,5 +27,3 @@ config/secrets.yml
 *.Thumbs.db
 .idea
 /config/database.yml
-
-oi
