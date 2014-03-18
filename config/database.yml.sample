@@ -1,0 +1,28 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acad_development
+  pool: 5
+  username: root
+  password: senha
+  host: localhost
+  
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acad_test
+  pool: 5
+  username: root
+  password: senha
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acad_production
+  username: root
+  password: senha
+  pool: 5
+  host: localhost
