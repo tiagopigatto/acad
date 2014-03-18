@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use sqlite3 as the database for Active Record
+# Use mysql2 as the database for Active Record
 gem 'mysql2', '0.3.15'
 
 gem 'authlogic', '3.4.0'
+
+gem 'scrypt', '1.2.1'
 
 #Substitui o mongrel
 gem 'thin', :group => :development
