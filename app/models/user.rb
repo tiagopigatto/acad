@@ -1,9 +1,10 @@
 # encoding: utf-8
 class User < ActiveRecord::Base
 
-  belongs_to :user_profile
-  belongs_to  :gender
   belongs_to  :user_profile
+  belongs_to  :gender
+  has_many    :user_plans
+  has_many    :addressess
 
 
   acts_as_authentic do |c|
@@ -32,8 +33,9 @@ class User < ActiveRecord::Base
   #validates_uniqueness_of :registration, :message => "Já existe um usuário com este mesmo CPF."
 
   #validates_format_of   :cpf,
-  #                      :with => /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/i,
+  #                      :with => /^\d{3}\.\d{3}\.\d{3}\-\d{2}$,
   #                      :message => "O CPF informado não é válido"
+
 
   #validates_format_of   :email,
   #                      :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
