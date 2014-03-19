@@ -27,18 +27,22 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :message => "Favor preencher o nome do usuário."
   validates_presence_of :cpf, :message => "Favor preencher o CPF."
   validates_presence_of :user_profile_id, :message => "Favor escolher um perfil de usuário."
+  validates_presence_of :email, :message => "Favor preencher o campo de e-mail."
+  validates_presence_of :responsible_cpf, :message => "Favor preencher o cpf do responsavel."
+  validates_presence_of :phone, :message => "Favor preencher o campo de telefone."
 
-  validates_uniqueness_of :cpf, :message => "Já existe um usuário com este mesmo CPF."
+  #validates_uniqueness_of :cpf, :message => "Já existe um usuário com este mesmo CPF."
+
 
   #validates_uniqueness_of :registration, :message => "Já existe um usuário com este mesmo CPF."
+  #CPF_REGEX = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
 
-  #validates_format_of   :cpf,
-  #                      :with => /^\d{3}\.\d{3}\.\d{3}\-\d{2}$,
-  #                      :message => "O CPF informado não é válido"
+  #validates_format_of   :cpf, :with => /\A^\d{3}\.\d{3}\.\d{3}\-\d{2}\z/, :message => "O CPF informado não é válido"
+  
+  validates_format_of   :email,
+                        :with       => /\A^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/,
+                        :message    => 'Favor informar um e-mail válido'
 
 
-  #validates_format_of   :email,
-  #                      :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
-  #                      :message    => 'Favor informar um e-mail válido'
 
 end
